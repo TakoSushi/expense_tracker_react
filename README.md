@@ -1,29 +1,16 @@
-# Rsbuild Project
+# Мини приложение контроля покупок
 
-## Setup
+Данное приложение выполнено для последующей отработки тестирования приложений React с помощью тестовых библиотек **Jest** и **React** Testing Library.
 
-Install the dependencies:
+Приложение создано с помощью утилиты RSBuild.
 
-```bash
-pnpm install
-```
+Приложение использует только основной фрейморк **React** без дополнительны библиотек.
 
-## Get Started
+Запуск приложения:
 
-Start the dev server:
-
-```bash
-pnpm dev
-```
-
-Build the app for production:
-
-```bash
-pnpm build
-```
-
-Preview the production build locally:
-
-```bash
-pnpm preview
-```
+1. Клонируем библиотеку командой
+   `git clone https://github.com/TakoSushi/expense_tracker_react.git`
+2. Скачиваем зависимости
+   `npm install`
+3. Запускаем приложение
+   `npm run start`
