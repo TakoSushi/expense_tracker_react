@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -96,19 +96,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -124,28 +124,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >IncomeExpenses(</span>) {
-  const { transactions } = <span class="cstat-no" title="statement not covered" >useContext(GlobalContext);</span>
+export function IncomeExpenses() {
+  const { transactions } = useContext(GlobalContext);
 &nbsp;
-  const amounts = <span class="cstat-no" title="statement not covered" >transactions.map(<span class="fstat-no" title="function not covered" >tr</span> =&gt; <span class="cstat-no" title="statement not covered" >tr.amount)</span>;</span>
-  const income = <span class="cstat-no" title="statement not covered" >amounts</span>
-    .filter(<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item &gt; 0)</span>
-    .reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, item) =&gt; (<span class="cstat-no" title="statement not covered" >acc += item)</span>, 0)
+  const amounts = transactions.map(tr =&gt; tr.amount);
+  const income = amounts
+    .filter(item =&gt; item &gt; 0)
+    .reduce((acc, item) =&gt; (acc += item), 0)
     .toFixed(2);
-  const expense = <span class="cstat-no" title="statement not covered" >Math.abs(amounts</span>
-  .filter(<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item &lt; 0)</span>
+  const expense = Math.abs(amounts
+  .filter(item =&gt; item &lt; 0)
   .reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, item) =&gt; (<span class="cstat-no" title="statement not covered" >acc += item)</span>, 0))
   .toFixed(2);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;div className="inc-exp-container"&gt;
       &lt;div&gt;
         &lt;h4&gt;Приход&lt;/h4&gt;
-        &lt;p className="money plus"&gt;+ ₽{income}&lt;/p&gt;
+        &lt;p className="money plus" data-testid="money-plus"&gt;+ ₽{income}&lt;/p&gt;
       &lt;/div&gt;
       &lt;div&gt;
         &lt;h4&gt;Траты&lt;/h4&gt;
-        &lt;p className="money minus"&gt;- ₽{expense}&lt;/p&gt;
+        &lt;p className="money minus" data-testid="money-minus"&gt;- ₽{expense}&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   )
@@ -157,7 +157,7 @@ export function <span class="fstat-no" title="function not covered" >IncomeExpen
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-05T11:19:04.972Z
+                at 2024-04-13T20:52:41.637Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

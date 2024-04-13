@@ -18,11 +18,11 @@ export function IncomeExpenses() {
     <div className="inc-exp-container">
       <div>
         <h4>Приход</h4>
-        <p className="money plus">+ ₽{income}</p>
+        <p className="money plus" data-testid="money-plus">+ ₽{income}</p>
       </div>
       <div>
         <h4>Траты</h4>
-        <p className="money minus">- ₽{expense}</p>
+        <p className="money minus" data-testid="money-minus">- ₽{expense}</p>
       </div>
     </div>
   )
