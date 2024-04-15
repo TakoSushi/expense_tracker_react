@@ -16,7 +16,7 @@ describe('IncomeExpenses', () => {
 
     expect(screen.getAllByRole('heading')[0]).toHaveTextContent('Приход');
     expect(screen.getAllByRole('heading')[1]).toHaveTextContent('Траты');
-    expect(screen.getByTestId('money-plus')).toHaveTextContent(/^\+\s{1}₽\d+.\d{2}/);
-    expect(screen.getByTestId('money-minus')).toHaveTextContent(/^-\s{1}₽\d+.\d{2}/);
+    expect(screen.getByTestId('money-plus')).toHaveTextContent(/^\+\s{1}₽\d+.\d{2}$/);
+    expect(screen.getByTestId('money-minus')).toHaveTextContent(/^-\s{1}₽\d+.\d{2}$/);
   });
 });
