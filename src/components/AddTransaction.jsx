@@ -49,7 +49,7 @@ const onSubmit = (e) => {
           onChange={(e) => setAmount(e.target.value)}
         />
       </div>
-      <button className="btn">Добавить транзакцию</button>
+      <button className="btn" data-testid="submit-btn">Добавить транзакцию</button>
      </form>
     </>
   )

@@ -2,6 +2,7 @@
 const config = {
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{js,jsx}', '!src/index.jsx'],
+  coveragePathIgnorePatterns: ['src/testing-utils'],
   coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],

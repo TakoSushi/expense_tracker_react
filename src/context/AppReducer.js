@@ -11,7 +11,5 @@ export default (state, action) => {
         ...state,
         transactions: [action.payload, ...state.transactions],
       }
-    default:
-      return state;
   }
 }

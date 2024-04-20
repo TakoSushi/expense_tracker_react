@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -125,26 +125,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,9 +151,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,7 +165,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,25 +180,25 @@ import { GlobalContext } from "../context/GlobalState";
 import { v4 as uuidv4 } from 'uuid';
 &nbsp;
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >AddTransaction(</span>) {
-const [text, setText] = <span class="cstat-no" title="statement not covered" >useState('');</span>
-const [amount, setAmount] = <span class="cstat-no" title="statement not covered" >useState(0);</span>
+export function AddTransaction() {
+const [text, setText] = useState('');
+const [amount, setAmount] = useState(0);
 &nbsp;
-const { addTransaction } = <span class="cstat-no" title="statement not covered" >useContext(GlobalContext);</span>
+const { addTransaction } = useContext(GlobalContext);
   
-const onSubmit = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  e.preventDefault();</span>
+const onSubmit = (e) =&gt; {
+  e.preventDefault();
 &nbsp;
-  const newTransaction = <span class="cstat-no" title="statement not covered" >{</span>
+  const newTransaction = {
     id: uuidv4(),
     text,
     amount: +amount,
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  addTransaction(newTransaction);</span>
+  addTransaction(newTransaction);
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;&gt;
      &lt;h3&gt;Добавить новую транзакцию&lt;/h3&gt; 
      &lt;form onSubmit={onSubmit}&gt;
@@ -209,7 +209,7 @@ const onSubmit = <span class="cstat-no" title="statement not covered" ><span cla
           id="text"
           placeholder="Enter text..."
           value={text}
-          onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setText(e.target.value)}</span>
+          onChange={(e) =&gt; setText(e.target.value)}
         /&gt;
       &lt;/div&gt;
       &lt;div className="form-control"&gt;
@@ -223,10 +223,10 @@ const onSubmit = <span class="cstat-no" title="statement not covered" ><span cla
           id="amount"
           placeholder="Enter amount..."
           value={amount}
-          onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setAmount(e.target.value)}</span>
+          onChange={(e) =&gt; setAmount(e.target.value)}
         /&gt;
       &lt;/div&gt;
-      &lt;button className="btn"&gt;Добавить транзакцию&lt;/button&gt;
+      &lt;button className="btn" data-testid="submit-btn"&gt;Добавить транзакцию&lt;/button&gt;
      &lt;/form&gt;
     &lt;/&gt;
   )
@@ -238,7 +238,7 @@ const onSubmit = <span class="cstat-no" title="statement not covered" ><span cla
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-04-15T20:52:56.653Z
+                at 2024-04-20T19:30:21.958Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
